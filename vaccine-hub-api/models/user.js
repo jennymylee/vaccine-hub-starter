@@ -51,6 +51,7 @@ class User {
       "last_name",
       "email",
       "location",
+      "date",
     ];
 
     requiredFields.forEach((field) => {
@@ -81,8 +82,8 @@ class User {
     //create a new user in the db with all their info
     const result = await db.query(
       `
-		INSERT INTO users (email, password, first_name, last_name, location)
-		VALUES ($1, $2, $3, $4, $5)
+		INSERT INTO users (email, password, first_name, last_name, location, date)
+		VALUES ($1, $2, $3, $4, $5, $6)
 		RETURNING id, email, password, first_name, last_name, location, date`,
       [
         lowercasedEmail,
@@ -90,6 +91,7 @@ class User {
         credentials.first_name,
         credentials.last_name,
         credentials.location,
+        credentials.date,
       ]
     );
     // return the user
