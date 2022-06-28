@@ -8,5 +8,16 @@
     "morgan": "^1.10.0",
     "nodemon": "^2.0.18",
     "pg": "^8.7.3"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "vaccine-hub-api",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
